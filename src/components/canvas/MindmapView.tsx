@@ -46,7 +46,9 @@ interface BoxRect {
 }
 
 const TRANSITION_MS = 250;
-const FOCUS_DELAY_MS = TRANSITION_MS + 30;
+// Buffer beyond markmap's transition for the RAF tracker to settle on the
+// final rect before stopping. Small fudge factor (50ms) covers easing tails.
+const TRACK_DURATION_MS = TRANSITION_MS + 50;
 
 type StructuralAction = "sibling" | "child" | "outdent";
 
@@ -115,25 +117,33 @@ export function MindmapView() {
       const fo = g.querySelector("foreignObject");
       const target: Element = inner ?? fo ?? g;
       const r = target.getBoundingClientRect();
+      const scale = svgZoomScale();
       const base: EditRect = {
         left: r.left,
         top: r.top,
         width: r.width,
         height: r.height,
+        // Markmap option maxWidth=320 is in unscaled CSS px on the inner div;
+        // multiply by zoom so the overlay's wrap point matches what the user sees.
+        maxWidth: 320 * scale,
       };
       if (inner) {
         const cs = window.getComputedStyle(inner);
         // getComputedStyle returns CSS px values BEFORE the SVG transform scale.
         // We must multiply by the zoom scale so the overlay font/padding matches
         // the node's visual size on screen.
-        const scale = svgZoomScale();
         const scalePx = (v: string): string | undefined => {
           const n = parseFloat(v);
           return isNaN(n) ? undefined : `${(n * scale).toFixed(2)}px`;
         };
         base.fontFamily = cs.fontFamily;
         base.fontSize = scalePx(cs.fontSize);
+        base.fontWeight = cs.fontWeight;
+        base.fontStyle = cs.fontStyle;
+        base.letterSpacing = scalePx(cs.letterSpacing) ?? cs.letterSpacing;
         base.lineHeight = scalePx(cs.lineHeight) ?? cs.lineHeight;
+        base.color = cs.color;
+        base.textAlign = cs.textAlign;
         base.paddingLeft = scalePx(cs.paddingLeft);
         base.paddingRight = scalePx(cs.paddingRight);
         base.paddingTop = scalePx(cs.paddingTop);
@@ -174,12 +184,41 @@ export function MindmapView() {
       if (!g) return;
       setSelected(id);
       setMultiSelected([id]);
+      let lastRect = rectOfG(g);
       setEditing({
         id,
         initial: plainTextOf(target),
-        rect: rectOfG(g),
+        rect: lastRect,
         caretAtEnd: atEnd,
       });
+      // Track the node's rect for the duration of markmap's transition so the
+      // editor visually slides with a freshly-created node from its parent's
+      // position to its final position. For stationary nodes (dblclick), the
+      // loop runs cheaply with no rect changes and no extra renders.
+      const start = performance.now();
+      const tick = () => {
+        const current = editingRef.current;
+        if (!current || current.id !== id) return;
+        const g2 = findG(id);
+        if (g2) {
+          const r = rectOfG(g2);
+          if (
+            Math.abs(r.left - lastRect.left) > 0.3 ||
+            Math.abs(r.top - lastRect.top) > 0.3 ||
+            Math.abs(r.width - lastRect.width) > 0.3 ||
+            Math.abs(r.height - lastRect.height) > 0.3
+          ) {
+            lastRect = r;
+            setEditing((curr) =>
+              curr && curr.id === id ? { ...curr, rect: r } : curr,
+            );
+          }
+        }
+        if (performance.now() - start < TRACK_DURATION_MS) {
+          requestAnimationFrame(tick);
+        }
+      };
+      requestAnimationFrame(tick);
     };
 
     const applyStructural = (
@@ -231,9 +270,9 @@ export function MindmapView() {
       const pending = pendingFocusRef.current;
       pendingFocusRef.current = null;
       void mm.setData(mdastToMarkmap(state.mdast)).then(() => {
-        requestAnimationFrame(injectIds);
-        if (!pending) return;
-        window.setTimeout(() => {
+        requestAnimationFrame(() => {
+          injectIds();
+          if (!pending) return;
           const node = resolvePath(state.mdast, pending.path);
           if (!node) return;
           const newId = deriveId(node);
@@ -244,11 +283,13 @@ export function MindmapView() {
           setSelected(newId);
           setMultiSelected([newId]);
           if (pending.openEdit) {
+            // Open immediately — openEditorOn now RAF-tracks the new node so
+            // the editor slides with it from parent's position to final.
             openEditorOn(newId, pending.caretAtEnd);
           } else {
             refreshMarks();
           }
-        }, FOCUS_DELAY_MS);
+        });
       });
     });
 
