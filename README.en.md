@@ -63,12 +63,12 @@ Type your notes → watch them turn into a live, zoomable mind map → **box-sel
 
 ## 📦 Download
 
-**Latest: [v0.1.0](https://github.com/clearsky0601/arbor/releases/tag/v0.1.0)**
+**Latest: [v0.1.1](https://github.com/clearsky0601/arbor/releases/tag/v0.1.1)**
 
 | Platform | File |
 |---|---|
-| 🍎 macOS (Apple Silicon) | [`arbor_0.1.0_aarch64.dmg`](https://github.com/clearsky0601/arbor/releases/download/v0.1.0/arbor_0.1.0_aarch64.dmg) |
-| 📦 Source | [`arbor-0.1.0-source.zip`](https://github.com/clearsky0601/arbor/releases/download/v0.1.0/arbor-0.1.0-source.zip) |
+| 🍎 macOS (Apple Silicon) | [`Arbor_0.1.1_aarch64.dmg`](https://github.com/clearsky0601/arbor/releases/download/v0.1.1/Arbor_0.1.1_aarch64.dmg) |
+| 📦 Source | [`arbor-0.1.1-source.zip`](https://github.com/clearsky0601/arbor/releases/download/v0.1.1/arbor-0.1.1-source.zip) |
 
 > ⚠️ Only an Apple Silicon build is published right now. Intel Mac / Windows / Linux builds are on the roadmap.
 

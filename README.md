@@ -65,12 +65,12 @@
 
 ## 📦 下载
 
-**最新版本：[v0.1.0](https://github.com/clearsky0601/arbor/releases/tag/v0.1.0)**
+**最新版本：[v0.1.1](https://github.com/clearsky0601/arbor/releases/tag/v0.1.1)**
 
 | 平台 | 文件 |
 |---|---|
-| 🍎 macOS (Apple Silicon) | [`arbor_0.1.0_aarch64.dmg`](https://github.com/clearsky0601/arbor/releases/download/v0.1.0/arbor_0.1.0_aarch64.dmg) |
-| 📦 源码 | [`arbor-0.1.0-source.zip`](https://github.com/clearsky0601/arbor/releases/download/v0.1.0/arbor-0.1.0-source.zip) |
+| 🍎 macOS (Apple Silicon) | [`Arbor_0.1.1_aarch64.dmg`](https://github.com/clearsky0601/arbor/releases/download/v0.1.1/Arbor_0.1.1_aarch64.dmg) |
+| 📦 源码 | [`arbor-0.1.1-source.zip`](https://github.com/clearsky0601/arbor/releases/download/v0.1.1/arbor-0.1.1-source.zip) |
 
 > ⚠️ 当前仅提供 macOS Apple Silicon 构建。Intel Mac / Windows / Linux 构建在路上。
 
