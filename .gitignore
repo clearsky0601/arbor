@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Agent runtime (claude-code-bridge / codex sessions, local-only)
+.ccb/
