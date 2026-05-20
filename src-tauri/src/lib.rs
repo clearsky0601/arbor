@@ -8,7 +8,7 @@ use commands::watcher as cmd_watcher;
 
 #[tauri::command]
 fn greet(name: &str) -> String {
-    format!("Hello, {name}! markmap_cc backend is alive.")
+    format!("Hello, {name}! Arbor backend is alive.")
 }
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]

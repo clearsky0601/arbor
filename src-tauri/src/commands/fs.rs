@@ -165,7 +165,7 @@ pub async fn new_window(app: AppHandle) -> CmdResult<()> {
         .unwrap_or(0);
     let label = format!("w{ts}");
     WebviewWindowBuilder::new(&app, label, WebviewUrl::App("/".into()))
-        .title("markmap_cc")
+        .title("Arbor")
         .inner_size(1200.0, 800.0)
         .build()
         .map_err(|e| CmdError::Other(e.to_string()))?;

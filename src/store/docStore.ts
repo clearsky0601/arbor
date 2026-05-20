@@ -3,7 +3,7 @@ import type { Root } from "mdast";
 import { mdastFromMarkdown } from "../sync/mdastFromMarkdown";
 import { ipc } from "../tauri/ipc";
 
-export const SAMPLE_MARKDOWN = `# markmap_cc
+export const SAMPLE_MARKDOWN = `# Arbor
 
 ## What it is
 - A Mac mindmap editor

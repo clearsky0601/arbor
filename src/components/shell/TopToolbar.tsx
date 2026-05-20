@@ -111,7 +111,7 @@ export function TopToolbar() {
       >
         ☰
       </button>
-      <span className="toolbar__title">markmap_cc</span>
+      <span className="toolbar__title">Arbor</span>
       <span className="toolbar__sep" />
       <button className="toolbar__btn" onClick={newDocument} title="New (⌘N)">
         New

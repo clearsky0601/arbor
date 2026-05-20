@@ -6,7 +6,7 @@ import { ipc } from "../../tauri/ipc";
 
 // ── Config ────────────────────────────────────────────────────────────
 
-const CONFIG_KEY = "markmap_cc_ai_config_v2";
+const CONFIG_KEY = "arbor_ai_config_v2";
 
 interface AIConfig {
   baseUrl: string;

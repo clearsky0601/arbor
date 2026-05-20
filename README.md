@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="./src-tauri/icons/128x128@2x.png" alt="markmap_cc" width="128" height="128" />
+<img src="./src-tauri/icons/128x128@2x.png" alt="Arbor" width="128" height="128" />
 
-# markmap_cc
+# Arbor
 
 **🤖 AI 加持的 Markdown × 思维导图原生桌面编辑器**
 
@@ -14,13 +14,13 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Rust](https://img.shields.io/badge/Rust-1.77+-CE412B?logo=rust&logoColor=white)](https://www.rust-lang.org)
 [![Platform](https://img.shields.io/badge/macOS-Apple%20Silicon-000?logo=apple&logoColor=white)](#-下载)
-[![Release](https://img.shields.io/github/v/release/clearsky0601/markmap_cc?color=blueviolet)](https://github.com/clearsky0601/markmap_cc/releases)
+[![Release](https://img.shields.io/github/v/release/clearsky0601/arbor?color=blueviolet)](https://github.com/clearsky0601/arbor/releases)
 
 [English](./README.en.md) · **简体中文**
 
 <br />
 
-<img src="./docs/screenshot.png" alt="markmap_cc 主界面截图" width="100%" />
+<img src="./docs/screenshot.png" alt="Arbor 主界面截图" width="100%" />
 
 </div>
 
@@ -28,7 +28,7 @@
 
 ## ✨ 这是什么
 
-`markmap_cc` 是一个用 **Tauri + React** 搭出来的桌面级 Markdown 思维导图编辑器。
+`Arbor` 是一个用 **Tauri + React** 搭出来的桌面级 Markdown 思维导图编辑器。
 
 它的核心想法很简单 — **Markdown 就是导图，导图就是 Markdown**，再加上一个**懂你结构的 AI 副驾**：
 
@@ -65,19 +65,19 @@
 
 ## 📦 下载
 
-**最新版本：[v0.1.0](https://github.com/clearsky0601/markmap_cc/releases/tag/v0.1.0)**
+**最新版本：[v0.1.0](https://github.com/clearsky0601/arbor/releases/tag/v0.1.0)**
 
 | 平台 | 文件 |
 |---|---|
-| 🍎 macOS (Apple Silicon) | [`markmap_cc_0.1.0_aarch64.dmg`](https://github.com/clearsky0601/markmap_cc/releases/download/v0.1.0/markmap_cc_0.1.0_aarch64.dmg) |
-| 📦 源码 | [`markmap_cc-0.1.0-source.zip`](https://github.com/clearsky0601/markmap_cc/releases/download/v0.1.0/markmap_cc-0.1.0-source.zip) |
+| 🍎 macOS (Apple Silicon) | [`arbor_0.1.0_aarch64.dmg`](https://github.com/clearsky0601/arbor/releases/download/v0.1.0/arbor_0.1.0_aarch64.dmg) |
+| 📦 源码 | [`arbor-0.1.0-source.zip`](https://github.com/clearsky0601/arbor/releases/download/v0.1.0/arbor-0.1.0-source.zip) |
 
 > ⚠️ 当前仅提供 macOS Apple Silicon 构建。Intel Mac / Windows / Linux 构建在路上。
 
 > 由于应用未签名，首次打开时 macOS 会提示「无法验证开发者」，可在 *系统设置 → 隐私与安全性* 中放行，或终端执行：
 >
 > ```bash
-> xattr -dr com.apple.quarantine /Applications/markmap_cc.app
+> xattr -dr com.apple.quarantine /Applications/Arbor.app
 > ```
 
 ## ⌨️ 快捷键
@@ -96,8 +96,8 @@
 
 ```bash
 # 拉代码
-git clone https://github.com/clearsky0601/markmap_cc.git
-cd markmap_cc
+git clone https://github.com/clearsky0601/arbor.git
+cd arbor
 
 # 安装依赖
 bun install

@@ -1,8 +1,8 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
-  "productName": "markmap_cc",
+  "productName": "Arbor",
   "version": "0.1.0",
-  "identifier": "com.tommy.markmapcc",
+  "identifier": "com.tommy.arbor",
   "build": {
     "frontendDist": "../dist",
     "devUrl": "http://localhost:5173",
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "markmap_cc",
+        "title": "Arbor",
         "width": 1280,
         "height": 800,
         "minWidth": 900,

@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="./src-tauri/icons/128x128@2x.png" alt="markmap_cc" width="128" height="128" />
+<img src="./src-tauri/icons/128x128@2x.png" alt="Arbor" width="128" height="128" />
 
-# markmap_cc
+# Arbor
 
 **🤖 An AI-powered Markdown × mind-map native desktop editor.**
 
@@ -14,13 +14,13 @@ Type your notes → watch them turn into a live, zoomable mind map → **box-sel
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Rust](https://img.shields.io/badge/Rust-1.77+-CE412B?logo=rust&logoColor=white)](https://www.rust-lang.org)
 [![Platform](https://img.shields.io/badge/macOS-Apple%20Silicon-000?logo=apple&logoColor=white)](#-download)
-[![Release](https://img.shields.io/github/v/release/clearsky0601/markmap_cc?color=blueviolet)](https://github.com/clearsky0601/markmap_cc/releases)
+[![Release](https://img.shields.io/github/v/release/clearsky0601/arbor?color=blueviolet)](https://github.com/clearsky0601/arbor/releases)
 
 **English** · [简体中文](./README.md)
 
 <br />
 
-<img src="./docs/screenshot.png" alt="markmap_cc main interface" width="100%" />
+<img src="./docs/screenshot.png" alt="Arbor main interface" width="100%" />
 
 </div>
 
@@ -28,7 +28,7 @@ Type your notes → watch them turn into a live, zoomable mind map → **box-sel
 
 ## ✨ What is this
 
-`markmap_cc` is a desktop-class **Markdown × mind-map** editor built with **Tauri + React**, paired with an **AI copilot that actually understands your structure**:
+`Arbor` is a desktop-class **Markdown × mind-map** editor built with **Tauri + React**, paired with an **AI copilot that actually understands your structure**:
 
 - Type Markdown on the left, see the live mind map on the right. **Two-way, real-time sync.**
 - Double-click a node to edit text in place — the underlying Markdown is patched surgically, preserving your original formatting.
@@ -63,19 +63,19 @@ Type your notes → watch them turn into a live, zoomable mind map → **box-sel
 
 ## 📦 Download
 
-**Latest: [v0.1.0](https://github.com/clearsky0601/markmap_cc/releases/tag/v0.1.0)**
+**Latest: [v0.1.0](https://github.com/clearsky0601/arbor/releases/tag/v0.1.0)**
 
 | Platform | File |
 |---|---|
-| 🍎 macOS (Apple Silicon) | [`markmap_cc_0.1.0_aarch64.dmg`](https://github.com/clearsky0601/markmap_cc/releases/download/v0.1.0/markmap_cc_0.1.0_aarch64.dmg) |
-| 📦 Source | [`markmap_cc-0.1.0-source.zip`](https://github.com/clearsky0601/markmap_cc/releases/download/v0.1.0/markmap_cc-0.1.0-source.zip) |
+| 🍎 macOS (Apple Silicon) | [`arbor_0.1.0_aarch64.dmg`](https://github.com/clearsky0601/arbor/releases/download/v0.1.0/arbor_0.1.0_aarch64.dmg) |
+| 📦 Source | [`arbor-0.1.0-source.zip`](https://github.com/clearsky0601/arbor/releases/download/v0.1.0/arbor-0.1.0-source.zip) |
 
 > ⚠️ Only an Apple Silicon build is published right now. Intel Mac / Windows / Linux builds are on the roadmap.
 
 > The app is unsigned. macOS will warn the first time you open it. Allow it in *System Settings → Privacy & Security*, or run:
 >
 > ```bash
-> xattr -dr com.apple.quarantine /Applications/markmap_cc.app
+> xattr -dr com.apple.quarantine /Applications/Arbor.app
 > ```
 
 ## ⌨️ Shortcuts
@@ -94,8 +94,8 @@ Requires [Rust](https://www.rust-lang.org/tools/install) (1.77+) and [Bun](https
 
 ```bash
 # Clone
-git clone https://github.com/clearsky0601/markmap_cc.git
-cd markmap_cc
+git clone https://github.com/clearsky0601/arbor.git
+cd arbor
 
 # Install
 bun install
